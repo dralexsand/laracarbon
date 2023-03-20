@@ -36,4 +36,4 @@ jobs:
           path: /lara.carbonfiber.kz
           owner: owner
         env:
-          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
+          DEPLOY_KEY: 'W2yn^14an_T3'
