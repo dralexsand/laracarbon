@@ -35,8 +35,7 @@ jobs:
         run: chmod -R 777 storage bootstrap/cache
       - name: Execute tests (Unit and Feature tests) via PHPUnit
         run: vendor/bin/phpunit
-      - name: Laravel Rsync Deploy
-      - name: 📂 Sync files
+      - name: FTP Upload
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: 195.210.46.94
