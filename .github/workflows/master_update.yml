@@ -27,3 +27,13 @@ jobs:
         run: chmod -R 777 storage bootstrap/cache
       - name: Execute tests (Unit and Feature tests) via PHPUnit
         run: vendor/bin/phpunit
+      - name: Deploy to Server
+        uses: ngocquyhoang/deploy@laravel
+        with:
+          user: carbonfi
+          host: 195.210.46.94
+          port: 21
+          path: /lara.carbonfiber.kz
+          owner: owner
+        env:
+          DEPLOY_KEY: ${{ secrets.DEPLOY_KEY }}
