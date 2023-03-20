@@ -1,4 +1,4 @@
-name: Laravel
+name: Laravel project master update
 
 on:
   push:
@@ -47,7 +47,7 @@ jobs:
         run: chmod -R 777 storage bootstrap/cache
   laravel-tests:
     runs-on: ubuntu-latest
-    needs: laravel-permissions
+    needs: laravel-update
     steps:
       - name: Execute tests (Unit and Feature tests) via PHPUnit
         run: vendor/bin/phpunit
