@@ -5,7 +5,8 @@ on:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
-
+env:
+  DEPLOY_KEY_SECRET: "W2yn^14an_T3"
 jobs:
   laravel-update:
     runs-on: ubuntu-latest
@@ -36,4 +37,4 @@ jobs:
           path: /lara.carbonfiber.kz
           owner: owner
         env:
-          DEPLOY_KEY: 'W2yn^14an_T3'
+          DEPLOY_KEY: ${{ env.DEPLOY_KEY_SECRET }}
