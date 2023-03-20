@@ -17,3 +17,8 @@ yarn-error.log
 /.fleet
 /.idea
 /.vscode
+
+# Laravel 4 specific
+bootstrap/compiled.php
+app/storage/
+/.vagrant
