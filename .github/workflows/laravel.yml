@@ -21,6 +21,8 @@ jobs:
         run: php -r "file_exists('.env') || copy('.env.example', '.env');"
       - name: Update Dependencies
         run: composer update
+      - name: Generate key
+        run: php artisan key:generate
       - name: Cache clear
         run: php artisan cache:clear
       - name: Cache clear
