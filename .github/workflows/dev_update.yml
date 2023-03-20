@@ -3,12 +3,9 @@ name: Laravel project dev update
 on:
   push:
     branches: [ "dev" ]
-    paths-ignore:
-      - '.github/workflows/*'
   pull_request:
     branches: [ "dev" ]
-    paths-ignore:
-      - '.github/workflows/*'
+
 jobs:
   laravel-update:
     runs-on: ubuntu-latest
