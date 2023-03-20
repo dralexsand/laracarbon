@@ -1,11 +1,14 @@
-name: Laravel project master update
+name: Laravel project dev update
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "dev" ]
+    paths-ignore:
+      - '.github/workflows/*'
   pull_request:
-    branches: [ "master" ]
-
+    branches: [ "dev" ]
+    paths-ignore:
+      - '.github/workflows/*'
 jobs:
   laravel-update:
     runs-on: ubuntu-latest
