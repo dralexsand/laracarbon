@@ -21,18 +21,33 @@ jobs:
         run: composer update
       - name: Generate key
         run: php artisan key:generate
-  laravel-optimize-process:
-    runs-on: ubuntu-latest
-    steps:
+      - name: Cache clear
+        run: php artisan cache:clear
+      - name: Cache clear
+        run: php artisan cache:clear
+      - name: Cache view clear
+        run: php artisan view:clear
+      - name: Cache config clear
+        run: php artisan config:clear
+      - name: Cache route clear
+        run: php artisan route:clear
+      - name: Cache view
+        run: php artisan view:cache
+      - name: Cache config
+        run: php artisan config:cache
+      - name: Cache route
+        run: php artisan route:cache
+      - name: Optimize
+        run: php artisan optimize
       - name: Dump autoload
         run: composer dump-autoload
-  laravel-permissions:
-    runs-on: ubuntu-latest
-    steps:
+      - name: Dump autoload
+        run: composer dump-autoload
       - name: Directory Permissions
         run: chmod -R 777 storage bootstrap/cache
   laravel-tests:
     runs-on: ubuntu-latest
+    needs: laravel-permissions
     steps:
       - name: Execute tests (Unit and Feature tests) via PHPUnit
         run: vendor/bin/phpunit
