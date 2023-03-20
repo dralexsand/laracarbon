@@ -6,11 +6,15 @@ on:
   pull_request:
     branches: [ "master" ]
 env:
-  DEPLOY_KEY_SECRET: "W2yn^14an_T3"
+  GH_CARBON_SECRET: ${{ secrets.DEPLOY_CARBON_SECRET }}
 jobs:
   laravel-update:
     runs-on: ubuntu-latest
     steps:
+      - name: Print env
+        run: |
+          echo "GH_CARBON_SECRET"
+          echo "${{ GH_CARBON_SECRET }}"
       - name: Setup PHP with PECL extension
         uses: shivammathur/setup-php@v2
         with:
@@ -28,13 +32,3 @@ jobs:
         run: chmod -R 777 storage bootstrap/cache
       - name: Execute tests (Unit and Feature tests) via PHPUnit
         run: vendor/bin/phpunit
-      - name: Deploy to Server
-        uses: ngocquyhoang/deploy@laravel
-        with:
-          user: carbonfi
-          host: 195.210.46.94
-          port: 21
-          path: /lara.carbonfiber.kz
-          owner: owner
-        env:
-          DEPLOY_KEY: ${{ env.DEPLOY_KEY_SECRET }}
