@@ -6,5 +6,9 @@ jobs:
     steps:
       - name: print
         run: echo Hello GH Actions!
+      - name: print a few lines
+        run: |
+          echo First line
+          echo Second line
     
     
