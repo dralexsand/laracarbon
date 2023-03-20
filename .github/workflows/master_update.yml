@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Print env
         run: |
-          echo GH_CARBON_SECRET
+          echo secret
           echo "${{ GH_CARBON_SECRET }}"
       - name: Setup PHP with PECL extension
         uses: shivammathur/setup-php@v2
