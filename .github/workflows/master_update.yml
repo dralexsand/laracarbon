@@ -39,6 +39,6 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
           server: 195.210.46.94
-          server-dir: lara.carbonfiber.kz
+          server-dir: lara.carbonfiber.kz/
           username: carbonfi
           password: ${{ secrets.DEPLOY_CARBON_SECRET }}
