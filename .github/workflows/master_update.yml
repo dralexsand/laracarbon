@@ -37,6 +37,3 @@ jobs:
   project-post-upload:
     runs-on: self-hosted
     needs: 'project-upload'
-    steps:
-      - name: Clear cash and composer update
-        run: cleanup.sh
