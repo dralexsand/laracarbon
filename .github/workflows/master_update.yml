@@ -34,9 +34,9 @@ jobs:
           server-dir: lara.carbonfiber.kz/
           username: carbonfi
           password: ${{ secrets.DEPLOY_CARBON_SECRET }}
-  project-update:
+  project-post-upload:
     runs-on: self-hosted
     needs: 'project-upload'
     steps:
       - name: Clear cash and composer update
-        run: ACTIONS_RUNNER_HOOK_JOB_COMPLETED=/cleanup.sh
+        run: cleanup.sh
